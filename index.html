@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Ahynoa</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(black,#2c2f34);
+        }
+        h1 {
+            position: fixed;
+            color: #f20050;
+            bottom: 30vh;
+            left: 52rem;
+            text-shadow: 0 0 5px black;
+            animation: text 1s linear infinite;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        @media (max-width: 1080px) {
+            h1 {
+                position: fixed;
+            color: #f20050;
+            bottom: 30vh;
+            left: 26rem;
+            text-shadow: 0 0 5px black;
+            animation: text 1s linear infinite;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+        }
+
+        @keyframes text {
+            0%{
+                color: red;
+                text-shadow: 0 0 10px black;
+            }
+            80%{
+                color: #f20050;
+                text-shadow: 0 0 10px #2c2f34;
+            }
+            100%{
+                color: #f20044;
+                text-shadow: 0 0 10px black;
+            }
+
+        }
+        .heart {
+            height: 140px;
+            width: 140px;
+            background-color: #f20044;
+            position: relative;
+            transform: rotate(-45deg);
+            box-shadow: 0px 0px 100px #f20044;
+            animation: heart 0.9s linear infinite;
+        }
+        @keyframes heart {
+            0% {
+                transform: rotate(-45deg) scale(1.07);
+            }
+            80% {
+                transform: rotate(-45deg) scale(0.9);
+            }
+            100% {
+                transform: rotate(-45deg) scale(0.7);
+            }
+        }
+        .heart:before {
+            content: "";
+            position: absolute;
+            height: 140px;
+            width: 140px;
+            background-color: #f20044;
+            top: -50%;
+            border-radius: 75px;
+            box-shadow: 0px 0px 100px #f20044;
+        }
+        .heart:after {
+            content: "";
+            position: absolute;
+            height: 140px;
+            width: 140px;
+            background-color: #f20044;
+            right: -50%;
+            border-radius: 75px;
+            box-shadow: 0px 0px 100px #f20044;
+        }
+    </style>
+</head>
+<body>
+    <div class="text">
+        <h1>¡Feliz Cumpleaños!</h1>
+    </div>
+    <div class="heart"></div>
+    <audio autoplay loop>
+        <source src="Vicente Fernández  Las Mañanitas.mp3" type="audio/mp3">
+    </audio>
+    <script src="confetti.js"></script>
+    <script>
+        const start = () => {
+            setTimeout(function(){
+                confetti.start();
+            });
+        };
+        
+        start();
+    </script>
+</body>
+</html>
